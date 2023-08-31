@@ -1,53 +1,30 @@
 const express = require('express');
+const donReq = require('../models/donationRequest');
+const {
+    createDonReq,
+    getAllDonRqe,
+    getSingleDonReq,
+    deleteDonReq,
+    UpdateDonReq
+} = require('../controllers/donationRequest');
 
 const router = express.Router();
 
 
 //get all donation requests
-router.get('/', (req,res) => {
-
-    res.json({
-        mssg:"Get all requests"
-    })
-
-})
-
+router.get('/', getAllDonRqe)
 
 //get single donation requests
-router.get('/:id', (req,res) => {
-
-    res.json({
-        mssg:"Get single donationr requets"
-    })
-
-})
+router.get('/:id', getSingleDonReq)
 
 //save single donation requests
-router.post('/', (req,res) => {
-
-    res.json({
-        mssg:"save new donation requests"
-    })
-
-})
+router.post('/', createDonReq)
 
 //delete single donation requests
-router.post('/:id', (req,res) => {
-
-    res.json({
-        mssg:"delete a donation requests"
-    })
-
-})
+router.delete('/:id', deleteDonReq)
 
 //update single donation requests
-router.patch('/:id', (req,res) => {
-
-    res.json({
-        mssg:"update a donation requests"
-    })
-
-})
+router.patch('/:id',UpdateDonReq)
 
 
 
