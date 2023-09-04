@@ -11,6 +11,10 @@ import Requests from './pages/Requests';
 import Donation from './pages/Donation';
 import Home from './pages/Home';
 
+//import css
+import 'bulma/css/bulma.min.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function App() {
   return (

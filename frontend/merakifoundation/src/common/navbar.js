@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 
-const Navbar = () => {
+const Navbar = ({title}) => {
 
     const navigate = useNavigate()
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                                 fontWeight: "700",
                                 textTransform: "capitalize"
                             }} >
-                                title
+                                {title}
 
                             </div>
 
