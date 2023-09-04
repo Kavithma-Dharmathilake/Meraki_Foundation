@@ -1,5 +1,4 @@
 const express = require('express');
-const donReq = require('../models/donationRequest');
 const {
     createDonReq,
     getAllDonRqe,
