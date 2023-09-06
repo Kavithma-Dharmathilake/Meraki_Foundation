@@ -43,14 +43,15 @@ const createDonReq = async (req, res) => {
         category, 
         title, 
         Description, 
-        amntreq, 
-        amntres, 
+        amountRequired, 
+        amountReceived, 
+        contactDetails,
         date
             } = req.body
 
             //add to db
     try{
-        const donreq = await donReq.create({category,title, Description, amntreq,amntres, date})
+        const donreq = await donReq.create({category,title, Description, amountRequired,amountReceived,contactDetails, date})
         res.status(200).json(donreq)
     }catch(error){
         res.status(400).json({ error: error.message});

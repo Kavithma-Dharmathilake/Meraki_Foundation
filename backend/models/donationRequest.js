@@ -18,17 +18,21 @@ const donationRequestSchema = new Schema({
     },
     amountRequired:{
         type:String,
+        required:true,
     },
     amountReceived:{
         type:String,
+        required:true,
       
     },
     date:{
         type:Object,
+        required:true,
        
     },
     contactDetails:{
         type:String,
+        required:true,
         
     },
 },{timestamps:true})

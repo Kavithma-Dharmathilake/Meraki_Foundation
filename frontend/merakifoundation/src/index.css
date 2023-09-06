@@ -1,5 +1,6 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css';
 
+
 body {
   margin: 0;
   font-family: "Playfair Display";
@@ -12,7 +13,94 @@ code {
 
 
 /* header css */
-.header{
-  color:white;
- 
+.header {
+  color: white;
+
+}
+
+/*  home page */
+.image-container {
+  margin-left: 200px;
+}
+
+.image-container2 {
+  position: absolute;
+  left: 400px;
+  top: 200px;
+  z-index: 0;
+}
+
+.image-container3 {
+  margin-right: 200px;
+}
+
+.container {
+  display: flex;
+}
+
+.abc {
+  border: 1px solid gray;
+  padding: 8px;
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  background-color: #4cc8a4;
+  text-align: center;
+}
+
+h5.abc {
+  text-align: center;
+  color: #33cccc;
+}
+
+p.abc {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+/* profile css */
+.image-container {
+  margin-left: 200px; 
+}
+.profile {
+  overflow: hidden;
+}
+
+.profile img {
+  float: left;
+  margin-right: 10px;
+}
+
+.image-container img {
+  margin-left:100px;
+  width: 200px;
+  height: 200px;
+}
+
+.profile table {
+  margin-top: 0;
+  margin-left: 230px; 
+  padding: 0;
+}
+
+.profile td {
+  padding: 5px;
+  text-align: left;
+}
+
+
+
+.aligntable{
+  margin-top: 0;
+  margin-left: 230px; 
+  padding: 0;
+}
+hr {
+  border: none; 
+  height: 5px; 
+  background-color: #333; 
+}
+.para{
+  text-align:justify;
 }

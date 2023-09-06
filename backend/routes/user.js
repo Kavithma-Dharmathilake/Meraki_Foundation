@@ -1,6 +1,8 @@
 const express = require('express');
 
 const {
+    loginUser,
+    signUpUser,
     createuser,
     getAllUser,
     getSingleUser,
@@ -11,11 +13,14 @@ const {
 const router = express.Router();
 
 
+router.post('/login',loginUser)
+router.post('/signup',signUpUser)
+
 //get all donation requests
 router.get('/', getAllUser)
 
 //get single donation requests
-router.get('/:id', getSingleUser)
+router.get('/:email', getSingleUser)
 
 //save single donation requests
 router.post('/', createuser)
