@@ -1,5 +1,5 @@
 {
-  "proxy":"http://localhost:3001",
+  "proxy":"http://backend:5000",
   "name": "merakifoundation",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +12,9 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "bulma": "^0.9.4",
+    "cross-env": "^7.0.3",
     "font-awesome": "^4.7.0",
+    "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",

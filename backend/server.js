@@ -6,9 +6,6 @@ const user = require('./routes/user.js');
 const contact = require('./routes/contact.js');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('./models/user.js');
 const auth = require('./routes/auth.js')
 const payment = require('./routes/payments.js');
 const blood = require('./routes/Blood.js');
@@ -26,6 +23,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 })
+
 app.use(cors());
 
 
@@ -41,7 +39,7 @@ app.use('/api/userProfile', userProfile)
 
 
 //connect to db
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI || 3000)
   .then(() => {
     //listen for requests
     app.listen(process.env.PORT, () => {

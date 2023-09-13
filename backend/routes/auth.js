@@ -1,5 +1,4 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user'); // Import your User model
 
@@ -39,10 +38,7 @@ router.post('/login', async (req, res) => {
         return res.status(401).json({ error: 'Authentication failed' });
       }
   
-      // Compare the provided password with the hashed password
-      const passwordMatch = await bcrypt.compare(password, user.password);
-  
-      if (!passwordMatch) {
+      if (user.password !== password) {
         return res.status(401).json({ error: 'Authentication failed' });
       }
   
