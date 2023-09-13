@@ -26,6 +26,10 @@ app.use((req, res, next) => {
 
 app.use(cors());
 
+const corsOptions = {
+  origin: "https://meraki-frontend.onrender.com/", // frontend URI (ReactJS)
+}
+
 
 
 //routes
