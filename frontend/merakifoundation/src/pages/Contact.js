@@ -23,7 +23,7 @@ const Contact = () => {
 
         const payment = {fname,lname,email,phone, msg}
 
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://meraki-backend.onrender.com/api/contact', {
 
 
             method:'POST',

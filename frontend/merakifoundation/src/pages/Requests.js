@@ -12,7 +12,7 @@ const Requests = () => {
 
         const fetchRequests = async () => {
 
-            const response = await fetch('/api/donreq')
+            const response = await fetch('https://meraki-backend.onrender.com/api/donreq')
             const json = await response.json();
 
             if (response.ok) {

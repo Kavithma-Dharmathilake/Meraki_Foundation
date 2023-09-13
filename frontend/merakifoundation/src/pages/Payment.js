@@ -34,7 +34,7 @@ const Payment = () => {
 
         const payment = {amount, type, method,fname,lname,email,username,comment}
 
-        const response = await fetch('/api/payment', {
+        const response = await fetch('https://meraki-backend.onrender.com/api/payment', {
 
 
             method:'POST',

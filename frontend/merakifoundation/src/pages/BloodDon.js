@@ -12,7 +12,7 @@ const BloodDonation = () => {
 
         const fetchRequests = async () => {
 
-            const response = await fetch('/api/blood')
+            const response = await fetch('https://meraki-backend.onrender.com/api/blood')
             const json = await response.json();
 
             if (response.ok) {
@@ -66,7 +66,7 @@ const BloodDonation = () => {
                                         <time dateTime={request.date}>
                                             Date:{new Date(request.date).toLocaleString()}
                                         </time><br />
-                                       
+
                                     </div>
                                 </div>
                             </div>

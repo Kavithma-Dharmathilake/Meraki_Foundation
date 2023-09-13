@@ -1,5 +1,4 @@
 {
-  "proxy":"https://meraki-backend.onrender.com",
   "name": "merakifoundation",
   "version": "0.1.0",
   "private": true,

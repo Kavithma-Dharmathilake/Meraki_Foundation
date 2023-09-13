@@ -17,7 +17,7 @@ const Profile = () => {
     useEffect(() => {
         // Fetch the request details based on the requestId
         const fetchRequestDetails = async () => {
-            const response = await fetch(`/api/userProfile/`, {
+            const response = await fetch(`https://meraki-backend.onrender.com/api/userProfile/`, {
                 headers: { 'Authorization': `Bearer ${user.token}` }
 
             });

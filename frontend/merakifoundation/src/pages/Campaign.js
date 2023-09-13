@@ -14,7 +14,7 @@ const Campaign = () => {
     useEffect(() => {
         // Fetch the request details based on the requestId
         const fetchRequestDetails = async () => {
-            const response = await fetch(`/api/donreq/${id}`);
+            const response = await fetch(`https://meraki-backend.onrender.com/api/donreq/${id}`);
             const json = await response.json();
             console.log(id);
 
