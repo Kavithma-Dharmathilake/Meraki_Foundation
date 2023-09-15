@@ -8,55 +8,55 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 const Profile = () => {
 
-    const { id } = useParams(); // Get the requestId from the URL
-
+    const { id } = useParams();
     const [request, setRequest] = useState(null);
     const [userData, setUserData] = useState(null);
     const { user } = useAuthContext();
 
+
     useEffect(() => {
-        // Fetch the request details based on the requestId
         const fetchRequestDetails = async () => {
-            const response = await fetch(`https://meraki-backend.onrender.com/api/userProfile/`, {
-                headers: { 'Authorization': `Bearer ${user.token}` }
+            try {
+                const response = await fetch(`https://meraki-backend.onrender.com/api/userProfile/`, {
+                    headers: { 'Authorization': `Bearer ${user.token}` }
+                });
 
-            });
-            const json = await response.json();
-            
-            if (response.ok) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const json = await response.json();
                 setRequest(json);
+            } catch (error) {
+                console.error(error);
+                // Handle errors here
             }
-
-            if (user) {
-                fetchRequestDetails();
-            }
-
         };
-        fetchRequestDetails();
 
         if (user && user.email) {
             // Make a GET request to your server's API endpoint using the user's email
-            fetch(`/api/user/${user.email}`)
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error('Network response was not ok');
-                }
-                return response.json();
-              })
-              .then((data) => {
-                setUserData(data);
-                console.log(data)
-              })
-              .catch((error) => {
-                console.error(error);
-                // Handle errors here
-              });
-          }
-       
-    }, [id, user]); // Include requestId in the dependency array
+            fetch(`https://meraki-backend.onrender.com/api/user/${user.email}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    setUserData(data);
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error(error);
+                    // Handle errors here
+                });
+        }
 
-    if (!request) {
-        return null; // or display a loading indicator
+        fetchRequestDetails();
+    }, [id, user]);
+
+    if (!request || !userData) {
+        return <div>Loading...</div>; // Display a loading state
     }
 
     return (
@@ -117,7 +117,7 @@ const Profile = () => {
                                         <button class="button is-primary is-light">Edit</button>
                                     </div></td>
                                 <td> <br /><div class="buttons">
-                                    <button class="button is-primary is-light">View History</button>
+                                    <button class="button is-primary is-light">Log Out</button>
                                 </div>
                                 </td>
                             </tr>
